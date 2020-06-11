@@ -6,7 +6,7 @@ function* addPet(action){
     try{
         console.log(action.payload);
         
-        yield axios.post('/addPet', action.payload);
+        yield axios.post(`/addPet/${action.payload}`);
     } catch(err){
         console.log(err);
     }
