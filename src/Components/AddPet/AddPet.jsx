@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+//import { connect } from 'react-redux';
+
 
 export class AddPet extends Component {
+
 
 componentDidMount = () => {
     console.log('comp did mount AddPet');
     //this.props.dispatch({ type: 'GET_PETS' });
+}
+
+toHome = () => {
+    //this.props.history.push(`/`);
 }
 
 
@@ -13,7 +20,7 @@ componentDidMount = () => {
             <div>
 
 
-                <div className="addForm">
+                <div className="addPetForm">
                 <h2>Add Pet</h2>
                 <form>
                 <input placeholder="Pet Name"></input>
@@ -25,7 +32,7 @@ componentDidMount = () => {
                     <option></option>
                 </select>
                 <button>Check In</button>
-                <button>Submit</button>
+                <button>ADD</button>
                 </form>
                 </div>
 
