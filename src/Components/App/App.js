@@ -23,9 +23,9 @@ class App extends Component {
         </header>
         <div className="navbar">
           <Link to="/pet">
-            <button className="leftButton">Pets</button>
+            <button className="leftButton">Dashboard</button>
           </Link>
-          <Link to="/owner"><button className="rightButton">Owner</button></Link>
+          <Link to="/owner"><button className="rightButton">Manage Owners</button></Link>
         </div>
         <Switch>
           <Redirect exact from="/" to="/pet" />
