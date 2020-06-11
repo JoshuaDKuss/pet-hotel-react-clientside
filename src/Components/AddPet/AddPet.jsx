@@ -19,7 +19,9 @@ componentDidMount = () => {
                 <input placeholder="Pet Name"></input>
                 <input placeholder="Pet Color"></input>
                 <input placeholder="Pet Breed"></input>
-                <select placeholder="Owner Name"></select>
+                <select>
+                    <option>"Owner Name"</option>
+                </select>
                 <button>Check In</button>
                 <button>Submit</button>
                 </form>
