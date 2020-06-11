@@ -25,7 +25,7 @@ export class AddPet extends Component {
     handleChangeFor = (event) => {
         // event.target.name is coming from name attribute on input field
         let propName = event.target.name;
-        console.log('Property:', propName);
+        // console.log('Property:', propName);
         this.setState({
             newPet: {
                 ...this.state.newPet,
@@ -35,38 +35,20 @@ export class AddPet extends Component {
         })
     }
 
-    handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('handle submit AddPet', this.state.newPet)
-    // this.props.dispatch({type: 'ADD_PET', payload: this.state.newPet})
-    // this.setState({
-    //   newPet: {
-    //     pet_name: '',
-    //     pet_color: '',
-    //     pet_breed: '',
-    //     owner: '',
-    //   },
-    // })
-  }
+    handleChange = (event, prop) => {
+        this.setState({
+            [prop]: event.target.value
+        })
+    }
 
-handleChange = (event, prop) => {
-    this.setState({
-        [prop]: event.target.value
-    })
-}
-
-addPet = () => {
-    this.props.dispatch({type:"POST_PET", payload: this.state});
-
-}
+    addPet = () => {
+        this.props.dispatch({type:"POST_PET", payload: this.state});
+    }
 
     render() {
         console.log(this.state);
-        
         return (
             <div>
-
-
                 <div className="addPetForm">
                     <h2>Add Pet</h2>
                     <form>
@@ -90,7 +72,7 @@ addPet = () => {
                             <option>3 Owner Name</option>
                         </select>
 
-                        <br/><button type="submit" onClick={this.handleSubmit}>ADD PET</button>
+                        <br /><button type="submit" onClick={this.addPet}>ADD PET</button>
                     </form>
                 </div><br/><br/>
 
@@ -120,7 +102,6 @@ addPet = () => {
                   {/* } */}
                 </tbody>
             </table> 
-
             </div>
         )
     }
