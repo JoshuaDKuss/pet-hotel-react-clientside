@@ -3,6 +3,7 @@ import {
   HashRouter as Router,
   Route,
   Redirect,
+  Link,
   Switch,
 } from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -20,6 +21,12 @@ class App extends Component {
         <header className="App-header">
           <h1>Pet Hotel</h1>
         </header>
+        <div className="navbar">
+          <Link to="/pet">
+            <button className="leftButton">Pets</button>
+          </Link>
+          <Link to="/owner"><button className="rightButton">Owner</button></Link>
+        </div>
         <Switch>
           <Redirect exact from="/" to="/pet" />
           <Route
