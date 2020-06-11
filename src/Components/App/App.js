@@ -6,7 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import AddOwner from '../AddOwner/AddOwner';
+import AddPet from '../AddPet/AddPet';
 //import logo from './logo.svg';
 import './App.css';
 
