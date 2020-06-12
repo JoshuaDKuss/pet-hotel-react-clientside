@@ -5,21 +5,21 @@ import { connect } from 'react-redux';
 
 export class AddOwner extends Component {
     state = {
-        ownerName : ''
+        name : ''
     }
     handleChangeFor = (event) => {
         console.log('changing',event.target.value)
         this.setState({
-            ownerName: event.target.value,
+            name: event.target.value,
         })
     }
 
     handleAddOwner = () =>{
-        console.log('clicked!',this.state.ownerName)
+        console.log('clicked!',this.state.name)
         this.props.dispatch({
             type: 'ADD_OWNER',
             payload: {
-                ownerName: this.state.ownerName
+                name: this.state.name
             }
         })
     }
