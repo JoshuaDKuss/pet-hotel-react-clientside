@@ -2,6 +2,7 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchOwner(){
+    console.log('fetchOwner');
     try{
         const response = yield axios.get('/owner');
         yield put({ type: 'SET_OWNER', payload: response.data });
