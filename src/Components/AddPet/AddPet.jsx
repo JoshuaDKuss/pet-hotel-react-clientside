@@ -41,7 +41,8 @@ export class AddPet extends Component {
         })
     }
 
-    addPet = () => {
+    addPet = (event) => {
+        
         this.props.dispatch({type:"POST_PET", payload: this.state});
     }
 
