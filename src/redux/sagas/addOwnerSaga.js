@@ -8,9 +8,14 @@ function* addOwnerSaga() {
 
 function* addOwner(action) {
     try {
-        console.log('get this owner from client', action.payload.addOwner)
+        console.log('get this owner from client', action.payload.name)
+        yield axios.post('/owner', {name:action.payload.name});
+        console.log('send this onwer to client', action.payload.name);
+        // yield put({
+        //   type: 'FETCH_OWNER',
+        // });
     } catch (error) {
-        console.log('Error with add new item:', error);
+        console.log('Error with add owner:', error);
     }
 }
 
