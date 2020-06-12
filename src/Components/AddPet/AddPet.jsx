@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import './AddPet.css';
 
 export class AddPet extends Component {
@@ -49,8 +49,20 @@ export class AddPet extends Component {
     // })
   }
 
+handleChange = (event, prop) => {
+    this.setState({
+        [prop]: event.target.value
+    })
+}
+
+addPet = () => {
+    this.props.dispatch({type:"POST_PET", payload: this.state});
+
+}
 
     render() {
+        console.log(this.state);
+        
         return (
             <div>
 
@@ -114,8 +126,6 @@ export class AddPet extends Component {
     }
 }
 
-export default AddPet;
+const propsToRedux = reduxState => ({reduxState});
 
-// const mapReduxStateToProps = (reduxState) => ({reduxState })
-
-// export default connect(mapReduxStateToProps)(AddPet);
+export default connect(propsToRedux)(AddPet);
