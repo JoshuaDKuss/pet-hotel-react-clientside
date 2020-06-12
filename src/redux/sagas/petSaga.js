@@ -9,7 +9,7 @@ function* fetchPets(){
     console.log('in fetchPets');
     try{
         const response = yield axios.get('/api/user');
-        yield put({ tupe: 'SET_USER', payload: response.data});
+        yield put({ type: 'SET_USER', payload: response.data});
     }catch (error) {
         console.log("Pet GET request failed", error);
         
@@ -19,4 +19,4 @@ function* fetchPets(){
 
 
 
-export default petSaga:
+export default petSaga;

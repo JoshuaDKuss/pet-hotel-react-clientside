@@ -15,7 +15,7 @@ export class AddPet extends Component {
 
     componentDidMount = () => {
         console.log('comp did mount AddPet');
-        //this.props.dispatch({ type: 'GET_PETS' });
+        this.props.dispatch({ type: 'FETCH_PETS' });
     }
 
     toHome = () => {
