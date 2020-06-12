@@ -14,7 +14,7 @@ export class AddPet extends Component {
     }
 
     componentDidMount = () => {
-        console.log('comp did mount AddPet');
+        // console.log('comp did mount AddPet');
         //this.props.dispatch({ type: 'GET_PETS' });
     }
 
@@ -42,12 +42,12 @@ export class AddPet extends Component {
     }
 
     addPet = (event) => {
-        
-        this.props.dispatch({type:"POST_PET", payload: this.state});
+        event.preventDefault();
+        this.props.dispatch({ type:"ADD_PET", payload: this.state.newPet});
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <div>
                 <div className="addPetForm">

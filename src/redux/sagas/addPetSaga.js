@@ -4,9 +4,9 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* addPet(action){
     try{
-        console.log(action.payload);
-        
-        yield axios.post(`/addPet`, action.payload);
+        yield axios.post('/add_pet', action.payload);
+        console.log('In Saga:', action.payload.pet_name);
+
     } catch(err){
         console.log(err);
     }
