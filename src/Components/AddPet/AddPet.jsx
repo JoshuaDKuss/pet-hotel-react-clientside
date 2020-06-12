@@ -9,7 +9,7 @@ export class AddPet extends Component {
             name: '',
             color: '',
             breed: '',
-            owner: '',
+            owner_id: 0,
         }
     }
 
@@ -66,11 +66,12 @@ export class AddPet extends Component {
                             value={this.state.newPet.pet_breed}></input><br />
 
                         <select name="owner_id"
-                            value={this.state.newPet.owner}
+                            // value={this.state.newPet.owner}
                             onChange={this.handleChangeFor}>
-                            <option>1 Owner Name</option>
-                            <option>2 Owner Name</option>
-                            <option>3 Owner Name</option>
+                            {this.props.reduxState.petReducer.map(pet => 
+                                <option key={pet.owner_id} value={pet.owner_id}>{pet.owner_name}</option>
+
+                            )}
                         </select>
 
                         <br /><button type="submit" onClick={this.addPet}>ADD PET</button>
