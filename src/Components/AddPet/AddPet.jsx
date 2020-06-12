@@ -6,9 +6,9 @@ export class AddPet extends Component {
 
     state = {
         newPet: {
-            pet_name: '',
-            pet_color: '',
-            pet_breed: '',
+            name: '',
+            color: '',
+            breed: '',
             owner: '',
         }
     }
@@ -107,18 +107,17 @@ export class AddPet extends Component {
                             <th className='tHead'>Actions</th>
                         </tr>
                     </thead>
-                    <p>{JSON.stringify(this.props.reduxState.petReducer)}</p>
                     <tbody>
-                        {/* {this.props.reduxState.petReducer.map(pet =>
+                        {this.props.reduxState.petReducer.map(pet =>
                             <tr key={pet.id} pet={pet}>
-                                <td className='tData'>{pet.owner}</td>
-                                <td className='tData'>{pet.pet_name}</td>
-                                <td className='tData'>{pet.pet_breed}</td>
-                                <td className='tData'>{pet.pet_color}</td>
+                                <td className='tData'>{pet.owner_name}</td>
+                                <td className='tData'>{pet.name}</td>
+                                <td className='tData'>{pet.breed}</td>
+                                <td className='tData'>{pet.color}</td>
                                 {pet.checked_in ? <td className='tData'>In</td> : <td className='tData'>Out</td>}
                                 <td className='tData'>{}</td>
                             </tr>
-                        )}; */}
+                        )}
                     </tbody>
                 </table>
 
